@@ -10,4 +10,4 @@ def failure_workflow():
  
 @task(retries=3, retry_delay_seconds=5)
 def retry_task():
-   raise Exception("Retrying"
+   raise Exception("Retrying")
