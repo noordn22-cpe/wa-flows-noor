@@ -7,7 +7,7 @@ IST = pytz.timezone("Asia/Kolkata")
 @task
 def time_check():
     hour = datetime.now(IST).hour
-    if not (11 <= hour <= 18):
+    if not (10 <= hour <= 18):
         raise Exception("Outside allowed time window")
     return True
 
