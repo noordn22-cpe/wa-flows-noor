@@ -6,8 +6,10 @@ IST = pytz.timezone("Asia/Kolkata")
 
 @task
 def time_check():
-    current_hour = datetime.now(IST).hour
-    return 11 <= current_hour <= 18
+    hour = datetime.now(IST).hour
+    if not (11 <= hour <= 18):
+        raise Exception("Outside allowed time window")
+    return True
 
 @task
 def gated_task():
@@ -15,6 +17,5 @@ def gated_task():
 
 @flow
 def time_gated_workflow():
-    allowed = time_check()
-    if allowed:
-        gated_task()
+    time_check()
+    gated_task()
