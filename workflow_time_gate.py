@@ -7,7 +7,7 @@ IST = pytz.timezone("Asia/Kolkata")
 @task
 def time_check():
     current_hour = datetime.now(IST).hour
-    return 9 <= current_hour <= 18
+    return 11 <= current_hour <= 18
 
 @task
 def gated_task():
